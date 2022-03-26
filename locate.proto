@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+// The file locator service definition.
+service FLocate {
+  // Sends a greeting
+  rpc SearchFor (FLocateRequest) returns (FlocateReply) {}
+}
+
+// The request message containing the user's name.
+message FLocateRequest {
+  string baseKey = 1;
+  repeated string additionalKeys = 2;
+}
+
+// The response message containing the greetings
+message FlocateReply {
+  repeated string file = 1;
+}
